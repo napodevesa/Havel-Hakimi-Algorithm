@@ -35,13 +35,11 @@ bool havel_hakimi(deque<int> degreeSequence) {
     //Remove the element from the front, decrement the first "front" number of values.
     int front = degreeSequence.front();
     degreeSequence.pop_front();
-    for (int i = 0; i < front; ++i) {
+    for (int i = 0; i < front; ++i)
         --degreeSequence[i];
-    }
 
     //Recursive call
     return havel_hakimi(move(degreeSequence));
-    
 }
 
 int main() {
@@ -59,6 +57,5 @@ int main() {
     for (auto it = degreeSequence.begin(); it != degreeSequence.end() - 1; ++it)
         cout << *it << ", ";
     cout << *(degreeSequence.end() - 1) << "].\n";
-
     return 0;
 }
